@@ -1,16 +1,19 @@
-# This is a sample Python script.
+from turtle import Turtle, Screen
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+crazy = Turtle()
+screen = Screen()
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def move_forwards():
+    crazy.forward(20)
+    crazy.setheading(45)
+    crazy.forward(20)
+    crazy.right(90)
+    crazy.forward(20)
+    crazy.left(135)
+    crazy.goto(-200, -100)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+screen.listen()
+screen.onkey(key="space", fun=move_forwards)
+screen.exitonclick()
