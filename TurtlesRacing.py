@@ -3,6 +3,7 @@ import random
 
 screen = Screen()
 screen.setup(width=1050, height=650)
+user = screen.textinput(title="Player!", prompt="What is your name? ").upper()
 user_bet = screen.textinput(title="Make a bet!", prompt="Which turtle will win the race? Enter a color: ")
 colors = ["red", "orange", "yellow", "green", "blue", "purple", "violet", "brown", "cyan", "olive"]
 y_positions = [-130, -100, -70, -40, -10, 20, 50, 80, 110, 140]
@@ -25,9 +26,9 @@ while is_race_on:
         if turtle.xcor() > 500:
             is_race_on = False
             if turtle.pencolor() == user_bet:
-                print(f"You've won! The winning color is {turtle.pencolor()}.")
+                print(f"You've won {user}! The winning color is {turtle.pencolor()}.")
             else:
-                print(f"You've lost! The winning color is {turtle.pencolor()}.")
+                print(f"You've lost {user}! The winning color is {turtle.pencolor()}.")
         turtle.forward(random.randint(0, 25))
 
 screen.exitonclick()
